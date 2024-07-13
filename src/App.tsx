@@ -25,8 +25,8 @@ import {
   ProfileDetails,
   ProfileMatchedJobs,
   Quiz,
-  SelectJobApplicants,
   User,
+  SelectJobApplicants,
 } from "./pages";
 
 // Components
