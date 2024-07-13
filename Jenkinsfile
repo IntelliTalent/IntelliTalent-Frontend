@@ -7,6 +7,7 @@ pipeline {
       steps {
         echo "------------------------------ up the start ---------------------------------------------"
         sh"""
+        
           cp /intelli/.env.frontend ./.env
           docker-compose down
           docker-compose up -d --build
