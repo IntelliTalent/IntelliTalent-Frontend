@@ -1,0 +1,10 @@
+export { default as JobSeekerMain } from "./job-seeker/Main";
+export { default as UserProfileDetails } from "./job-seeker/ProfileDetails";
+export { default as ProfileSkeleton } from "./job-seeker/ProfileSkeleton";
+export { default as CreateProfileView } from "./job-seeker/CreateProfile";
+export { default as EditProfileView } from "./job-seeker/EditProfile";
+export { default as RecruiterMain } from "./recruiter/Main";
+export { default as JobApplicantsTable } from "./recruiter/JobApplicantsTable";
+export { default as InterviewedJobApplicantsView } from "./recruiter/InterviewedJobApplicantsTable";
+export { default as SelectJobApplicantsView } from "./recruiter/SelectJobApplicantsTable";
+export { default as EditUserView } from "./EditUser";
