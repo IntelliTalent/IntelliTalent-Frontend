@@ -122,7 +122,7 @@ export default function CreateJob() {
         }
         await createJob(data);
 
-        navigate("/user");
+        navigate("/user?page=1");
       } catch (error: any) {
         setErrorMessage(error.response.data.message);
         console.log(error);

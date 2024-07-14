@@ -128,7 +128,10 @@ function Navbar({ hide }: { hide: boolean }) {
               )}
 
               {isLoggedIn && [
-                <MenuItem key="user" onClick={() => handleNavigation("/user")}>
+                <MenuItem
+                  key="user"
+                  onClick={() => handleNavigation("/user?page=1")}
+                >
                   <p className="text-center">
                     {user?.type === UserType.jobSeeker ? "Profiles" : "Jobs"}
                   </p>
@@ -149,7 +152,7 @@ function Navbar({ hide }: { hide: boolean }) {
                 ],
               ]}
 
-              <MenuItem onClick={() => handleNavigation("/jobs")}>
+              <MenuItem onClick={() => handleNavigation("/jobs?page=1")}>
                 <p className="text-center">Find Jobs</p>
               </MenuItem>
             </Menu>
@@ -179,14 +182,13 @@ function Navbar({ hide }: { hide: boolean }) {
             {isLoggedIn && (
               <>
                 <Button
-                  onClick={() => handleNavigation("/user")}
+                  onClick={() => handleNavigation("/user?page=1")}
                   className="block mx-3"
                   color="inherit"
                   style={{
-                    borderBottom:
-                      window.location.pathname === "/user"
-                        ? "1px solid"
-                        : "none",
+                    borderBottom: window.location.pathname.includes("/user")
+                      ? "1px solid"
+                      : "none",
                   }}
                 >
                   {user?.type === UserType.jobSeeker ? "Profiles" : "Jobs"}
@@ -227,12 +229,13 @@ function Navbar({ hide }: { hide: boolean }) {
             )}
 
             <Button
-              onClick={() => handleNavigation("/jobs")}
+              onClick={() => handleNavigation("/jobs?page=1")}
               className="block mx-3"
               color="inherit"
               style={{
-                borderBottom:
-                  window.location.pathname === "/jobs" ? "1px solid" : "none",
+                borderBottom: window.location.pathname.includes("/jobs")
+                  ? "1px solid"
+                  : "none",
               }}
             >
               Find Jobs

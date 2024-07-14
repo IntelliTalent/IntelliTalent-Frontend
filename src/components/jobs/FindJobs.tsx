@@ -58,7 +58,7 @@ function FindJobs() {
   useEffect(() => {
     fetchJobs();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [pageNumber]);
 
   return (
     <Container className="py-8">

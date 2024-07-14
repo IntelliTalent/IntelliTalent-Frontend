@@ -19,26 +19,26 @@ function RecruiterMain() {
   const [totalPages, setTotalPages] = useState(0);
   const { pageNumber, navigateToPage } = usePagination();
 
-  useEffect(() => {
-    const fetchJobs = async () => {
-      try {
-        const response = await getJobCards(pageNumber);
+  const fetchJobs = async () => {
+    try {
+      const response = await getJobCards(pageNumber);
 
-        if (response) {
-          setJobs(response.jobs);
-          setTotalPages(response.totalPages);
-        }
-      } catch (error: any) {
-        console.log(error);
-        navigate(`/error?message=${error.response.data.message}`);
+      if (response) {
+        setJobs(response.jobs);
+        setTotalPages(response.totalPages);
       }
-      setLoading(false);
-    };
+    } catch (error: any) {
+      console.log(error);
+      navigate(`/error?message=${error.response.data.message}`);
+    }
+    setLoading(false);
+  };
 
+  useEffect(() => {
     fetchJobs();
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [pageNumber]);
 
   return (
     <>

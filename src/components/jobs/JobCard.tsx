@@ -84,14 +84,14 @@ function JobCard({ job, type }: { job: IJobCard | IJob; type: string }) {
 
   return (
     <div
-      className="px-4 py-6 space-y-3 shadow-md hover:shadow-lg transition-shadow rounded-md border"
+      className="px-4 py-6 shadow-md hover:shadow-lg transition-shadow rounded-md border flex flex-col justify-between"
       style={{
         borderColor: secondary,
         backgroundColor: mode === "dark" ? "" : "#ffffff78",
       }}
     >
       {/* Title, Company, Location */}
-      <>
+      <div className="space-y-2">
         <FlexBetween>
           <h1 className="text-2xl font-bold tracking-wide">{job.title}</h1>
           {type === "recruiterPage" && (
@@ -143,25 +143,30 @@ function JobCard({ job, type }: { job: IJobCard | IJob; type: string }) {
             {getDurationSince(job.publishedAt, "en", "Today", "")}
           </p>
         </FlexBetween>
-      </>
 
-      {/* Job type, Job place */}
-      <div className="flex flex-wrap gap-1">
-        <Chip label={job.type} color="primary" />
-        <Chip label={job.jobPlace} color="success" />
-        <Chip label={job.jobSource} color="info" />
+        {/* Job type, Job place */}
+        <div className="flex flex-wrap gap-1">
+          <Chip label={job.type} color="primary" />
+          <Chip label={job.jobPlace || "N/A"} color="success" />
+          <Chip label={job.jobSource} color="info" />
 
-        {job.csRequired && <Chip label="CS" color="error" />}
+          {job.csRequired && <Chip label="CS" color="error" />}
+        </div>
       </div>
-      <div className="border w-full" />
+
+      <div className="border w-full my-3" />
 
       {/* Skills */}
       <div className="flex flex-wrap gap-x-2 gap-y-1 items-center justify-center min-h-16">
         {skills.map((skill: string) => (
           <Chip key={skill} label={skill} size="small" color="secondary" />
         ))}
+        {skills.length === 0 && (
+          <Chip label="No skills" size="small" color="secondary" />
+        )}
       </div>
-      <div className="border w-full" />
+
+      <div className="border w-full my-3" />
 
       {/* Apply and View Details */}
       {(type === "listing" || type === "matchedJobs") && (
@@ -195,20 +200,6 @@ function JobCard({ job, type }: { job: IJobCard | IJob; type: string }) {
         </div>
       )}
 
-      {/* Current stage for recruiter */}
-      {type === "recruiterPage" && (
-        <div className="flex gap-5 items-center font-semibold">
-          Current Stage:{" "}
-          {job.currentStage === "Active"
-            ? renderActiveStage
-            : job.currentStage === "Quiz"
-            ? renderQuizStage
-            : job.currentStage === "Interview"
-            ? renderInterviewStage
-            : renderFinalStage}
-        </div>
-      )}
-
       {/* Current stage for applicant */}
       {type === "appliedJobs" && (
         <div className="flex gap-5 items-center font-semibold">
@@ -227,25 +218,38 @@ function JobCard({ job, type }: { job: IJobCard | IJob; type: string }) {
         </div>
       )}
 
+      {/* Current stage for recruiter */}
       {type === "recruiterPage" && (
-        <Stack direction="row" spacing={2}>
-          {job.currentStage !== "Final" && (
-            <Button
-              aria-label="move-to-next"
-              fullWidth
-              variant="outlined"
-              onClick={handleClickOpen}
-            >
-              {job.currentStage === "Active"
-                ? "Deactivate"
-                : "Move to next stage"}
-            </Button>
-          )}
+        <div className="space-y-3">
+          <div className="flex gap-5 items-center font-semibold">
+            Current Stage:{" "}
+            {job.currentStage === "Active"
+              ? renderActiveStage
+              : job.currentStage === "Quiz"
+              ? renderQuizStage
+              : job.currentStage === "Interview"
+              ? renderInterviewStage
+              : renderFinalStage}
+          </div>
+          <Stack direction="row" spacing={2}>
+            {job.currentStage !== "Final" && (
+              <Button
+                aria-label="move-to-next"
+                fullWidth
+                variant="outlined"
+                onClick={handleClickOpen}
+              >
+                {job.currentStage === "Active"
+                  ? "Deactivate"
+                  : "Move to next stage"}
+              </Button>
+            )}
 
-          <Button aria-label="view-applicants" fullWidth variant="outlined">
-            <Link to={`/jobs/${job.id}/applicants`}>View Applicants</Link>
-          </Button>
-        </Stack>
+            <Button aria-label="view-applicants" fullWidth variant="outlined">
+              <Link to={`/jobs/${job.id}/applicants`}>View Applicants</Link>
+            </Button>
+          </Stack>
+        </div>
       )}
 
       {applyModalOpen && (

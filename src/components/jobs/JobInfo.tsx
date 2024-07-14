@@ -132,6 +132,7 @@ function JobInfo({ job }: { job: IJobDetails }) {
                 {job.skills.map((skill: string) => (
                   <Chip key={skill} label={skill} />
                 ))}
+                {job.skills.length === 0 && <Chip label="No skills" />}
               </div>
             </div>
             {/* End Skills */}

@@ -67,6 +67,8 @@ export async function getJobs(data: {
     link.searchParams.append("csRequired", data.computerScienceRequired);
   }
 
+  link.searchParams.append("take", `10`);
+
   const response = await userRequest.get(link.href);
 
   if (response.data) {

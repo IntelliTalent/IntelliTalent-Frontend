@@ -38,16 +38,6 @@ function VoiceRecord({
       });
       setCurrentVoiceAnswer(blob);
 
-      // TODO: Remove this part
-      // Download the audio
-      // const url = URL.createObjectURL(blob);
-      // const link = document.createElement("a");
-      // link.href = url;
-      // link.setAttribute("download", "recording.ogg");
-      // document.body.appendChild(link);
-      // link.click();
-      // document.body.removeChild(link);
-
       chunksRef.current = [];
     };
 

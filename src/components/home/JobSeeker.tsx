@@ -38,7 +38,7 @@ function JobSeeker() {
         <Button
           variant="contained"
           color="info"
-          onClick={() => navigate("/jobs")}
+          onClick={() => navigate("/jobs?page=1")}
         >
           Browse Jobs
         </Button>
@@ -86,12 +86,11 @@ function JobSeeker() {
           description="Create a strong profile with your skills and experiences."
           image={officeLaptop}
         />
-        {/* TODO: Add Autofill extension link */}
         <InfoCard
           title="Autofill Extension"
           description="Automatically fill any job application forms you don't want to fill manually."
           image={autofillExtension}
-          link="https://chromewebstore.google.com/"
+          link="https://chromewebstore.google.com/detail/form-autofill-extension/anccnjbblfdcfnceofempofneincapac?utm_source=ext_app_menu"
         />
       </div>
     </>
