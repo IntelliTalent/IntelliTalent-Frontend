@@ -148,7 +148,7 @@ function JobCard({ job, type }: { job: IJobCard | IJob; type: string }) {
       {/* Job type, Job place */}
       <div className="flex flex-wrap gap-1">
         <Chip label={job.type} color="primary" />
-        <Chip label={job.jobPlace} color="success" />
+        <Chip label={job.jobPlace || "N/A"} color="success" />
         <Chip label={job.jobSource} color="info" />
 
         {job.csRequired && <Chip label="CS" color="error" />}
@@ -160,6 +160,9 @@ function JobCard({ job, type }: { job: IJobCard | IJob; type: string }) {
         {skills.map((skill: string) => (
           <Chip key={skill} label={skill} size="small" color="secondary" />
         ))}
+        {skills.length === 0 && (
+          <Chip label="No skills" size="small" color="secondary" />
+        )}
       </div>
       <div className="border w-full" />
 
