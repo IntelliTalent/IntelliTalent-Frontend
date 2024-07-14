@@ -127,7 +127,9 @@ function JobApplicantsTable({ jobInfo }: { jobInfo: IJobDetails }) {
         : "Not Graded Yet",
     currentStage:
       applicant.currentStage[0].toUpperCase() + applicant.currentStage.slice(1),
-    appliedAt: getDurationSince(applicant.appliedAt, "en", "Today", ""),
+    appliedAt: applicant.appliedAt
+      ? getDurationSince(applicant.appliedAt, "en", "Today", "")
+      : "Unknown",
   }));
 
   const [paginationModel, setPaginationModel] = useState({
