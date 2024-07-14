@@ -131,7 +131,7 @@ export default function EditJob({ job }: { job: IJobDetails }) {
 
         await editJob(job.id, data);
 
-        navigate("/user");
+        navigate("/user?page=1");
       } catch (error: any) {
         setErrorMessage(error.response.data.message);
         console.log(error);

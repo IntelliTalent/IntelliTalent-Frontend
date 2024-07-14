@@ -38,7 +38,7 @@ function JobSeeker() {
         <Button
           variant="contained"
           color="info"
-          onClick={() => navigate("/jobs")}
+          onClick={() => navigate("/jobs?page=1")}
         >
           Browse Jobs
         </Button>

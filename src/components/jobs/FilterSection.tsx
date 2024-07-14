@@ -291,7 +291,7 @@ function FilterSection({
 
   useEffect(() => {
     if (filtersCleared) {
-      filterJobs();
+      filterJobs(1);
       setFiltersCleared(false);
     }
   }, [
