@@ -70,12 +70,14 @@ function InterviewedJobApplicantsView({ jobInfo }: { jobInfo: IJobDetails }) {
     id: applicant.id,
     email: applicant.email,
     matchScore: applicant.matchScore?.toFixed(2),
-    interviewGrade: applicant.interviewGrade
-      ? applicant.interviewGrade.toFixed(2)
-      : "Not Graded Yet",
-    quizGrade: applicant.quizGrade
-      ? applicant.quizGrade.toFixed(2)
-      : "Not Graded Yet",
+    interviewGrade:
+      applicant.interviewGrade || applicant.interviewGrade === 0
+        ? applicant.interviewGrade.toFixed(2)
+        : "Not Graded Yet",
+    quizGrade:
+      applicant.quizGrade || applicant.quizGrade === 0
+        ? applicant.quizGrade.toFixed(2)
+        : "Not Graded Yet",
     currentStage:
       applicant.currentStage[0].toUpperCase() + applicant.currentStage.slice(1),
     appliedAt: getDurationSince(applicant.appliedAt, "en", "Today", ""),
