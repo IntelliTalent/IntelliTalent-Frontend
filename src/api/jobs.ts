@@ -235,7 +235,7 @@ export async function getMatchedJobs(profileId: string) {
           currentStage: job.currentStage,
           jobSource: job.source,
           isApplied: job.isApplied,
-          matchScore: job.matchScore,
+          matchScore: job.matchScore * 100,
           isQualified: job.isQualified,
         } as IJobCard)
     ),
@@ -310,11 +310,11 @@ export async function getJobApplicants(
             id: user.profileId,
             email: user.email,
             isQualified: user.isQualified,
-            appliedAt: user.appliedData.appliedAt,
+            appliedAt: user.appliedData?.appliedAt,
             currentStage: user.currentStage,
             interviewGrade: user.interviewData?.grade,
             quizGrade: user.quizData?.grade,
-            matchScore: user.matchData?.matchScore,
+            matchScore: user.matchData?.matchScore * 100,
           } as IJobApplicant)
       ),
       totalPages: response.data.metadata.pageCount,
@@ -349,7 +349,7 @@ export async function getInterviewedJobApplicants(
             currentStage: user.currentStage,
             interviewGrade: user.interviewData?.grade,
             quizGrade: user.quizData?.grade,
-            matchScore: user.matchData?.matchScore,
+            matchScore: user.matchData?.matchScore * 100,
           } as IJobApplicant)
       ),
       totalPages: response.data.metadata.pageCount,
