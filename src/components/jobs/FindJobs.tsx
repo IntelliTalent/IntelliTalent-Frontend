@@ -32,7 +32,7 @@ function FindJobs() {
 
   const { pageNumber, navigateToPage } = usePagination();
 
-  const fetchJobs = async (pageNumber: number) => {
+  const fetchJobs = async () => {
     try {
       const response = await getJobs({
         jobTitle,
@@ -56,7 +56,7 @@ function FindJobs() {
   };
 
   useEffect(() => {
-    fetchJobs(pageNumber);
+    fetchJobs();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pageNumber]);
 
