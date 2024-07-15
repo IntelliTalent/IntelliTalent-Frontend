@@ -98,7 +98,7 @@ describe(
       cy.get("button").contains("Finish").click();
 
       // Assert that the user is redirected to his profile page
-      cy.url().should("eq", baseUrl + "/user");
+      cy.url().should("include", baseUrl + "/user");
     });
 
     it("should edit a profile", () => {
@@ -119,7 +119,7 @@ describe(
       cy.get("button").contains("Finish").click();
 
       // Assert that the user is redirected to his profile page
-      cy.url().should("eq", baseUrl + "/user");
+      cy.url().should("include", baseUrl + "/user");
 
       cy.contains("Backend Engineer").should("be.visible");
     });

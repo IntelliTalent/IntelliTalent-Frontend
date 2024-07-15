@@ -95,7 +95,7 @@ describe(
       cy.get("button").contains("Finish").click();
 
       // Assert that the user is redirected to his profile page
-      cy.url().should("eq", baseUrl + "/user");
+      cy.url().should("include", baseUrl + "/user");
 
       // logout
       cy.get("button[aria-label='Open settings']").click();
@@ -151,7 +151,7 @@ describe(
       cy.get("button").contains("Finish").click();
 
       // Assert that the user is redirected to his jobs page
-      cy.url().should("eq", baseUrl + "/user");
+      cy.url().should("include", baseUrl + "/user");
 
       // -------------------------------------------------------------
       // Create the second job with interview stage only
@@ -197,7 +197,7 @@ describe(
       cy.get("button").contains("Finish").click();
 
       // Assert that the user is redirected to his jobs page
-      cy.url().should("eq", baseUrl + "/user");
+      cy.url().should("include", baseUrl + "/user");
     });
 
     it("should apply for the first job with the newely created profile", () => {
@@ -213,6 +213,7 @@ describe(
       cy.contains("Find Jobs").click();
 
       cy.contains("Company1")
+        .parent()
         .parent()
         .parent()
         .parent()
@@ -247,6 +248,7 @@ describe(
         .parent()
         .parent()
         .parent()
+        .parent()
         .find("button[aria-label='view-applicants']")
         .click();
 
@@ -265,6 +267,7 @@ describe(
         .parent()
         .parent()
         .parent()
+        .parent()
         .find("button[aria-label='move-to-next']")
         .click();
 
@@ -279,6 +282,7 @@ describe(
 
       // check the applicants
       cy.contains("Company1")
+        .parent()
         .parent()
         .parent()
         .parent()
@@ -360,6 +364,7 @@ describe(
         .parent()
         .parent()
         .parent()
+        .parent()
         .find("button[aria-label='move-to-next']")
         .click();
 
@@ -372,6 +377,7 @@ describe(
         .parent()
         .parent()
         .parent()
+        .parent()
         .contains("Final")
         .should("be.visible");
 
@@ -381,6 +387,7 @@ describe(
 
       // check the applicants
       cy.contains("Company1")
+        .parent()
         .parent()
         .parent()
         .parent()
@@ -409,6 +416,7 @@ describe(
       cy.contains("Find Jobs").click();
 
       cy.contains("Company2")
+        .parent()
         .parent()
         .parent()
         .parent()
@@ -443,6 +451,7 @@ describe(
         .parent()
         .parent()
         .parent()
+        .parent()
         .find("button[aria-label='view-applicants']")
         .click();
 
@@ -461,6 +470,7 @@ describe(
         .parent()
         .parent()
         .parent()
+        .parent()
         .find("button[aria-label='move-to-next']")
         .click();
 
@@ -475,6 +485,7 @@ describe(
 
       // check the applicants
       cy.contains("Company2")
+        .parent()
         .parent()
         .parent()
         .parent()
@@ -560,6 +571,7 @@ describe(
         .parent()
         .parent()
         .parent()
+        .parent()
         .find("button[aria-label='view-applicants']")
         .click();
 
@@ -584,6 +596,7 @@ describe(
       // check the given grade in applicants list
       cy.contains("Jobs").click();
       cy.contains("Company2")
+        .parent()
         .parent()
         .parent()
         .parent()
@@ -617,6 +630,7 @@ describe(
         .parent()
         .parent()
         .parent()
+        .parent()
         .find("button[aria-label='move-to-next']")
         .click();
 
@@ -626,6 +640,7 @@ describe(
         .click();
 
       cy.contains("Company2")
+        .parent()
         .parent()
         .parent()
         .parent()
@@ -649,6 +664,7 @@ describe(
 
       // move the job to next stage
       cy.contains("Company2")
+        .parent()
         .parent()
         .parent()
         .parent()

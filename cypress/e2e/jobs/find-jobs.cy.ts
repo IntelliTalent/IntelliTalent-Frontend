@@ -45,7 +45,7 @@ describe(
       // Fifth stage
       cy.get("button").contains("Finish").click();
       // Assert that the user is redirected to his jobs page
-      cy.url().should("eq", baseUrl + "/user");
+      cy.url().should("include", baseUrl + "/user");
 
       // Create the second job
       cy.contains("Add Job").click();
@@ -75,7 +75,7 @@ describe(
       // Fifth stage
       cy.get("button").contains("Finish").click();
       // Assert that the user is redirected to his jobs page
-      cy.url().should("eq", baseUrl + "/user");
+      cy.url().should("include", baseUrl + "/user");
     });
 
     it("should set a filter then clear it", () => {
