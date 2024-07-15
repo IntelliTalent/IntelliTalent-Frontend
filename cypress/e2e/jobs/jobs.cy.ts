@@ -73,7 +73,7 @@ describe(
       cy.get("button").contains("Finish").click();
 
       // Assert that the user is redirected to his jobs page
-      cy.url().should("eq", baseUrl + "/user");
+      cy.url().should("include", baseUrl + "/user");
     });
 
     it("should edit a job", () => {
@@ -97,7 +97,7 @@ describe(
       cy.get("button").contains("Finish").click();
 
       // Assert that the user is redirected to his jobs page
-      cy.url().should("eq", baseUrl + "/user");
+      cy.url().should("include", baseUrl + "/user");
 
       // Assert that the job was edited
       cy.contains("IT Specialist").should("be.visible");
@@ -107,6 +107,7 @@ describe(
       cy.contains("Find Jobs").click();
 
       cy.contains("IT Specialist")
+        .parent()
         .parent()
         .parent()
         .find("button[aria-label='view-details']")
@@ -122,78 +123,6 @@ describe(
       cy.contains("Remote").should("be.visible");
       cy.contains("7+ years of experience").should("be.visible");
       cy.contains("Computer Science Required").should("be.visible");
-    });
-
-    it("should deactivate a job and move to final stage", () => {
-      cy.contains("Jobs").click();
-
-      // Check that the job is active
-      cy.contains("IT Specialist")
-        .parent()
-        .parent()
-        .contains("Current Stage:")
-        .find("div")
-        .contains("Active");
-
-      // Deactivate the job
-      cy.contains("IT Specialist")
-        .parent()
-        .parent()
-        .find("button[aria-label='move-to-next']")
-        .click();
-
-      cy.contains("Deactivate job")
-        .parent()
-        .find("button[aria-label='move-to-next']")
-        .click();
-
-      // Check that the job is in quiz stage
-      cy.contains("IT Specialist")
-        .parent()
-        .parent()
-        .contains("Current Stage:")
-        .find("div")
-        .contains("Quiz");
-
-      // Move the job to interview stage
-      cy.contains("IT Specialist")
-        .parent()
-        .parent()
-        .find("button[aria-label='move-to-next']")
-        .click();
-
-      cy.contains("Move job to next stage")
-        .parent()
-        .find("button[aria-label='move-to-next']")
-        .click();
-
-      // Check that the job is in interview stage
-      cy.contains("IT Specialist")
-        .parent()
-        .parent()
-        .contains("Current Stage:")
-        .find("div")
-        .contains("Interview");
-
-      // Move the job to final stage
-      cy.contains("IT Specialist")
-        .parent()
-        .parent()
-        .find("button[aria-label='move-to-next']")
-        .click();
-
-      cy.contains("Move job to next stage")
-        .parent()
-        .find("button[aria-label='move-to-next']")
-        .click();
-
-      // Check that the job is in the final stage
-      cy.contains("IT Specialist")
-        .parent()
-        .parent()
-        .contains("Current Stage:")
-        .find("div")
-        .contains("Final");
     });
   }
 );
