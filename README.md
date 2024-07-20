@@ -37,8 +37,17 @@ Intelli-Talent streamlines job searching and recruitment with features like auto
 
 ## 🎥 Demo
 
+https://github.com/user-attachments/assets/5b28e3a4-e339-4997-8d85-3206dc98e21e
 
-SOON
+
+https://github.com/user-attachments/assets/fb1b7720-8472-48fa-9f96-af63e7ac335f
+
+
+https://github.com/user-attachments/assets/8a03d030-c28e-4242-91b4-71b747cf00b4
+
+
+https://github.com/user-attachments/assets/45aa53f6-785a-41ba-acd2-f990680f3403
+
 
 
 ## 🏁 Getting started
