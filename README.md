@@ -1,46 +1,239 @@
-# Getting Started with Create React App
+<div align="center">
+    <h1 align='center'>⚡️<i>Intelli-Talent</i>⚡️</h1>
+    <p>A website where you can find your <i>Talent<i></p>
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<details open="open">
+<summary>
+<h2 style="display:inline">📝 Table of Contents</h2>
+</summary>
 
-In the project directory, you can run:
+- [📑 About](#about)
+- [⛏️ Built With](#built-with)
+- [🏁 Getting started](#getting-started)
+- [🎥 Demo](#demo)
+- [📷 Features](#features)
+- [📂 Folder structure](#folder-structure)
+- [✍️ Contributors](#contributors)
 
-### `npm start`
+</details>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 📑 About
 
-### `npm test`
+Intelli-Talent streamlines job searching and recruitment with features like automated CV and cover letter generation, job matching, and a Chrome extension for auto-filling application forms. For recruiters, it offers a comprehensive Application Tracking System (ATS) and multi-stage candidate filtration, including quizzes and interviews.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ⛏️ Built with
 
-### `npm run build`
+- [Reactjs](https://reactjs.org/)
+- [MUI](https://mui.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [React router dom](https://reactrouter.com/en/main)
+- [Axios](https://axios-http.com/docs/intro)
+- [Cypress](https://www.cypress.io/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🎥 Demo
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+SOON
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 🏁 Getting started
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **_Clone the repository_**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```sh
+$ git clone https://github.com/IntelliTalent/IntelliTalent-Frontend.git
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+2. **_Navigate to repository directory_**
 
-## Learn More
+```sh
+$ cd IntelliTalent-Frontend
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. **_Install dependencies_**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```sh
+$ npm install
+```
+
+### Running
+
+**_Running on development mode_**
+
+```sh
+$ npm start
+```
+
+
+## 📷 Features
+
+<details>
+<summary>
+<h4 style="display:inline">
+<strong><em>🔒 User Authentication</em></strong></h4>
+</summary>
+
+- Sign up
+- Login in
+- Forget password
+- Reset password
+- Verify email
+ 
+</details>
+
+<details>
+<summary>
+<h4 style="display:inline">
+<strong><em> 🙍‍♂️ User Profile</em></strong></h4>
+</summary>
+
+- Create a profile using LinkedIn, GitHub, and CV
+- Edit profile
+- Create multiple profiles for each job title
+
+</details>
+
+<details>
+<summary>
+<h4 style="display:inline">
+<strong><em> 📃 CV and Cover letter generator </em></strong></h4>
+</summary>
+
+- User can create a CV for his profile with one click
+- User can create a Cover Letter for his profile for a certain company with one click
+    
+</details>
+
+<details>
+<summary>
+<h4 style="display:inline">
+<strong><em> 💼 Jobs</em></strong></h4>
+</summary>
+
+- Create a job using a simple prompt
+- Add custom filters to the job (years of experience, computer science degree, ...etc)
+- Add Quiz stage for job applicants (generated automatically)
+- Add Interview stage for job applicants
+- Apply for a job
+- Find jobs
+  - Search for a job with many filters
+
+</details>
+
+<details>
+<summary>
+<h4 style="display:inline">
+<strong><em> 📃 Filtration</em></strong></h4>
+</summary>
+
+- View all applicants
+- View the quiz grade
+- View the matching score
+- Grade the interview for all interviewed applicants
+- View the interview grade
+- Select the best candidates
+
+</details>
+
+
+## 📂 Folder structure
+
+<details>
+  <summary><b><u>src</u></b></summary>
+  <p> Source directory </p>
+  <p> App.ts </p>
+
+* <details>
+      <summary><b><i>API</i></b></summary>
+      <p> Contains Axios instance</p>
+      </details>
+* <details>
+    <summary><b><u> Assets </u></b></summary>
+    <p> Contains Images, video directories etc... </p>
+
+    * <details>
+      <summary><b><i>Images</i></b></summary>
+      <p> Contains Images</p>
+      </details>
+  </details>
+
+* <details>
+    <summary><b><u> Utils </u></b></summary>
+    <p> Contains helper functions <b>(Pure functions)</b> </p>
+  </details>
+
+* <details>
+    <summary><b><u> Hooks </u></b></summary>
+    <p> Contains <b>Custom</b> hooks </p>
+  </details>
+
+* <details>
+    <summary><b><u> Constants </u></b></summary>
+    <p> Contains all contants </p>
+  </details>
+
+* <details>
+    <summary><b><u> Enums </u></b></summary>
+    <p> Contains all enums </p>
+  </details>
+  
+* <details>
+    <summary><b><u> Components </u></b></summary>
+    <p> Contains all components </p>
+  </details>
+
+* <details>
+    <summary><b><u> Types </u></b></summary>
+    <p> Contains all types </p>
+  </details>
+
+* <details>
+    <summary><b><u> Store </u></b></summary>
+    <p> Contains Redux toolkit store and reducers </p>
+  </details>
+  
+* <details>
+    <summary><b><u> Pages </u></b></summary>
+    <p> Pages that consists of Layouts and may be some components</b> </p>
+
+    * <details>
+      <p> Home.tsx </p>
+      <p> FindJobs.tsx </p>
+      </details>  
+  
+  </details>
+
+</details>
+
+
+<h2 href="#Contributors">✍️ Contributors</h2>
+
+<table>
+<tr>
+<td align="center">
+<a href="https://github.com/Waer1" target="_black">
+<img src="https://avatars.githubusercontent.com/u/70758177?v=4" width="150px;" alt="Waer1"/><br /><sub><b>Yousef Alwaer</b></sub></a><br />
+</td>
+
+<td align="center">
+<a href="https://github.com/BeshoyMorad" target="_black">
+<img src="https://avatars.githubusercontent.com/u/82404564?v=4" width="150px;" alt="BeshoyMorad"/><br /><sub><b>Beshoy Morad</b></sub></a><br />
+</td>
+
+<td align="center">
+<a href="https://github.com/mohamednabilabdelfattah" target="_black">
+<img src="https://avatars.githubusercontent.com/u/76039904?v=4" width="150px;" alt="Mohamed Nabil"/><br /><sub><b>Mohamed Nabil</b></sub></a><br />
+</td>
+
+<td align="center">
+<a href="https://github.com/MoazHassan2022" target="_black">
+<img src="https://avatars.githubusercontent.com/u/87096647?v=4" width="150px;" alt="Moaz Hassan"/><br /><sub><b>Moaz Hassan</b></sub></a><br />
+</td>
+
+</tr>
+</table>
