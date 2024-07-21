@@ -1,6 +1,11 @@
 <div align="center">
+<img src="src/assets/images/logo.png" alt="Intelli-Talent" border="0" style="width: 35%; height: 35%;">
+<h1/>
+</div>
+
+<div align="center">
     <h1 align='center'>⚡️<i>Intelli-Talent</i>⚡️</h1>
-    <p>A website where you can find your <i>Talent<i></p>
+    <p><i>Get discovered. Get hired.</i></p>
 </div>
 
 
