@@ -24,8 +24,6 @@
 
 </details>
 
----
-
 ## 📑 About
 
 Intelli-Talent streamlines job searching and recruitment with features like automated CV and cover letter generation, job matching, and a Chrome extension for auto-filling application forms. For recruiters, it offers a comprehensive Application Tracking System (ATS) and multi-stage candidate filtration, including quizzes and interviews.
